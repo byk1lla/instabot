@@ -1,13 +1,13 @@
 <?php
 
 $url = 'http://localhost:3000/login'; 
-$veriDosyasi = 'veri.json';
+$dataSource = 'data.json';
 
-$veri = file_get_contents($veriDosyasi);
+$data = file_get_contents($dataFile);
 
-$kullaniciBilgileri = json_decode($veri, true);
+$userinformation = json_decode($data, true);
 
-foreach ($kullaniciBilgileri as $username => $password) {
+foreach ($userinformation as $username => $password) {
     $data = [
         
             'username' => $username,
@@ -28,9 +28,9 @@ foreach ($kullaniciBilgileri as $username => $password) {
     $response = json_decode($response, true);
     if ($httpCode != 200) {
         
-        echo $response["message"] .  " $username" . "\n";
+        echo $response["message"] .  " => $username" . "\n";
     } else {
-        echo $response["message"] .  " $username" . "\n";
+        echo $response["message"] .  " => $username" . "\n";
     }
 
     curl_close($ch);
