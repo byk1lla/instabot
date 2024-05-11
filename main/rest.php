@@ -12,7 +12,8 @@ foreach ($userinformation as $username => $password) {
         "insta" => [
             'username' => $username,
             'password' => $password
-        ]
+        ],
+        'username' => "YOUR_USERNAME"
     ];
 
     $postData = json_encode($data);
