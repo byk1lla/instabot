@@ -7,18 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.post('/follow', async (req, res) => {
-    try {
-        const insta = req.body.insta;
-        const instaUsername = insta.username;
-        const instaPassword = insta.password;
-        ig.state.generateDevice(instaUsername);
-        await ig.account.login(instaUsername, instaPassword);
-        const userId = await ig.user.getIdByUsername(req.body.username);
-        await ig.friendship.create(userId);
-        res.status(200).json({ message: 'Followed user successfully' });
-    } catch (error) {
-        res.status(500).json({ message: 'Error following user', errorMsg: error });
-    }
+   // Coming Soon...
 });
 
 app.post('/login', async (req, res) => {
@@ -35,7 +24,7 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/', async (req, res) => {
-    res.status(400).json({ message: 'Get requests are not allowed' });
+    res.status(400).json({ message: 'Get requests are not allowed', error:1 });
 });
 
 app.listen(3000, () => {
