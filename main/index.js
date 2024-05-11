@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.post('/follow', async (req, res) => {
     try {
-        const insta = req.body.insta;
+        const insta = req.body;
         const instaUsername = insta.username;
         const instaPassword = insta.password;
         ig.state.generateDevice(instaUsername);

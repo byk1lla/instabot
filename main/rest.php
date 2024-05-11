@@ -9,10 +9,10 @@ $kullaniciBilgileri = json_decode($veri, true);
 
 foreach ($kullaniciBilgileri as $username => $password) {
     $data = [
-        'insta' => [
+        
             'username' => $username,
             'password' => $password
-        ]
+        
     ];
 
     $postData = json_encode($data);
