@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.post('/follow', async (req, res) => {
     try {
-        const insta = req.body;
+        const insta = req.body.insta;
         const instaUsername = insta.username;
         const instaPassword = insta.password;
         ig.state.generateDevice(instaUsername);
@@ -23,7 +23,7 @@ app.post('/follow', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     try {
-        const insta = req.body;
+        const insta = req.body.insta;
         const instaUsername = insta.username;
         const instaPassword = insta.password;
         ig.state.generateDevice(instaUsername);

@@ -9,10 +9,10 @@ $userinformation = json_decode($data, true);
 
 foreach ($userinformation as $username => $password) {
     $data = [
-        
+        "insta" => [
             'username' => $username,
             'password' => $password
-        
+        ]
     ];
 
     $postData = json_encode($data);
