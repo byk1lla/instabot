@@ -17,9 +17,9 @@ app.post('/login', async (req, res) => {
         const instaPassword = insta.password;
         ig.state.generateDevice(instaUsername);
         await ig.account.login(instaUsername, instaPassword);
-        res.status(200).json({Login:1});
+        res.status(200).json({Login:true});
     } catch (error) {
-        res.status(500).json({Login:0, Error:1, errorMsg:"An Error Occured while Logging in" });
+        res.status(500).json({Login:false, Error:true, errorMsg:"An Error Occured while Logging in" });
         console.log(error);
     }
 });
