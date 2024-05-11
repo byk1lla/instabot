@@ -17,14 +17,15 @@ app.post('/login', async (req, res) => {
         const instaPassword = insta.password;
         ig.state.generateDevice(instaUsername);
         await ig.account.login(instaUsername, instaPassword);
-        res.status(200).json({ message: 'Login successful' });
+        res.status(200).json({Login:1});
     } catch (error) {
-        res.status(500).json({ message: 'Error logging in', errorMsg: error });
+        res.status(500).json({Login:0, Error:1, errorMsg:"An Error Occured while Logging in" });
+        console.log(error);
     }
 });
 
 app.get('/', async (req, res) => {
-    res.status(400).json({ message: 'Get requests are not allowed', error:1 });
+    res.status(400).json({ errorMsg: 'Get requests are not allowed', error:1 });
 });
 
 app.listen(3000, () => {
