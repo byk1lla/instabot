@@ -106,7 +106,7 @@ Burada Login işlemleri gerçekleşir.
 | Parametre | Tip     | Açıklama                |
 | :-------- | :------- | :------------------------- |
 | `Login` | `boolean` |  Eğer Giriş Başarılıysa true eğer değilse false değerini döndürür. |
-| `Error` | `boolean` |  Eğer Giriş Başarısızsa false değerini döndürür.  |
+| `Error` | `boolean` |  Eğer Giriş Başarısızsa true değerini döndürür.  |
 | `errorMsg` | `string` | Hata Mesajını Döndürür. |
 
 ## Link
